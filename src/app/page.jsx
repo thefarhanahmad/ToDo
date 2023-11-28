@@ -11,7 +11,7 @@ export default function Home() {
   const [item, setItem] = useState("");
   const [todo, setTodo] = useState([]);
   // console.log("item : ",item)
-  console.log("todo items : ", todo);
+  // console.log("todo items : ", todo);
 
   // funtion to get all todo items
   const getTodos = async () => {
@@ -40,27 +40,27 @@ export default function Home() {
     }
   };
   return (
-    <main className="bg-gray-200 w-full flex justify-center p-6">
+    <main className="bg-white w-full flex justify-center p-2 sm:p-6">
       {/*todo wrapper */}
-      <div className="md:w-1/2 flex gap-4 flex-col items-center p-2 sm:w-3/4 w-[80vw] bg-white">
+      <div className="md:w-1/2 flex gap-4 flex-col items-center py-6 px-2 sm:w-3/4 w-full bg-gray-100 border border-gray-400 rounded">
         <h1 className="text-2xl font-bold underline">To Do App</h1>
 
         {/* form */}
         <form
           onSubmit={addTodo}
-          className="w-[80%] bg-gray-200 rounded overflow-hidden"
+          className="sm:w-[80%] w-[90%] bg-gray-300 rounded overflow-hidden"
         >
-          <div className="w-full flex">
+          <div className="w-full flex border border-gray-400 rounded">
             <input
               value={item}
               onChange={(e) => setItem(e.target.value)}
               type="text"
               placeholder="Enter here..."
-              className="w-[80%] outline-none border-2 px-2 py-4"
+              className="w-[80%] outline-none  px-2 py-4"
             />
             <button
               type="submit"
-              className="w-[20%] flex justify-center items-center overflow-hidden"
+              className="w-[20%] border-l border-gray-400 flex justify-center items-center overflow-hidden"
             >
               <GrAdd className="text-3xl font-semibold text-green-600 hover:text-green-700" />
             </button>
