@@ -11,7 +11,7 @@ const ToDoItems = ({ todo, id }) => {
   };
 
   return (
-    <div className="sm:w-[80%] w-[90%] rounded bg-gray-300 border border-gray-400 flex items-center justify-between p-4">
+    <div className="w-full rounded mb-4 bg-gray-300 border border-gray-400 flex items-center justify-between p-4">
       <span className="text-xl">{todo}</span>
       <button
         onClick={deleteItem}

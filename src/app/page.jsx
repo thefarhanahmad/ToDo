@@ -10,7 +10,7 @@ export default function Home() {
   // state management
   const [item, setItem] = useState("");
   const [todo, setTodo] = useState([]);
-  // console.log("item : ",item)
+  // console.log("item value : ",item)
   // console.log("todo items : ", todo);
 
   // funtion to get all todo items
@@ -68,9 +68,21 @@ export default function Home() {
         </form>
 
         {/* items to show in todo list */}
-        {todo.map((todo) => {
-          return <ToDoItems key={todo._id} todo={todo.todo} id={todo._id} />;
-        })}
+        <div className="sm:w-[80%] w-[90%] flex flex-col">
+          {todo.length == 0 ? (
+            <span className="text-xl text-red-600 font-semibold text-center w-full">
+              No todo items
+            </span>
+          ) : (
+            <div>
+              {todo.map((todo) => {
+                return (
+                  <ToDoItems key={todo._id} todo={todo.todo} id={todo._id} />
+                );
+              })}
+            </div>
+          )}
+        </div>
       </div>
     </main>
   );
